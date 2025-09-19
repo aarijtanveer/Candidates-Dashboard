@@ -1,0 +1,98 @@
+/* ---------- Base theme & background ---------- */
+:root{
+  --bg: #0f1220;
+  --text: #EDEFF7;
+  --muted: #ADB4C3;
+  --card-rgb: 20,25,53;
+  --card-alpha: .92;
+  --radius: 18px;
+  --accent: #FF8A65;
+  --header-grad-start: #FF7E5F;
+  --header-grad-end: #FEB47B;
+  --header-scale: 2.2;
+  --font-family: Inter, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-color: #EDEFF7;
+  --header-text: #2b1b14;
+  --base-scale: 1.0;
+  --accent-personal:#F6A36D; --accent-education:#FFB74D; --accent-experience:#FF8A65; --accent-publications:#70E1F5; --accent-achievements:#FAD961; --accent-training:#8BC34A; --accent-projects:#B39DDB; --accent-meta:#FFA726;
+}
+
+section.main > div {
+  background: radial-gradient(1200px 600px at -10% -10%, #ffb39022 0%, transparent 60%),
+              radial-gradient(1000px 500px at 110% -20%, #ffd89e1a 0%, transparent 60%),
+              radial-gradient(900px 500px at 50% 120%, #ffc3711a 0%, transparent 60%),
+              var(--bg);
+  color: var(--font-color);
+  font-family: var(--font-family);
+  font-size: calc(16px * var(--base-scale));
+}
+
+/* ---------- Header ---------- */
+.header{
+  position: sticky; top: 0; z-index: 50; margin-bottom: 1rem;
+  background: linear-gradient(120deg,var(--header-grad-start),var(--header-grad-end));
+  border-radius: var(--radius);
+  padding: 1.1rem 1.2rem; color: var(--header-text);
+  box-shadow: 0 10px 30px rgba(0,0,0,.35);
+}
+.header .title{ font-weight: 900; letter-spacing: .2px; }
+.header .subtitle{ opacity:.9; font-weight:700; margin-top:.2rem; }
+.header .header-pills{ margin-top:.6rem; display:flex; gap:.5rem; flex-wrap:wrap; }
+
+/* ---------- Cards ---------- */
+.card{
+  background: rgba(var(--card-rgb), var(--card-alpha));
+  border-radius: var(--radius);
+  padding: 1.1rem 1.2rem;
+  box-shadow: 12px 16px 32px rgba(0,0,0,0.35), -6px -6px 18px rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.05);
+}
+.section-title{ font-weight: 900; font-size: 1.2rem; margin-bottom: .6rem; }
+.section-personal{ border-left:6px solid var(--accent-personal); }
+.section-education{ border-left:6px solid var(--accent-education); }
+.section-experience{ border-left:6px solid var(--accent-experience); }
+.section-publications{ border-left:6px solid var(--accent-publications); }
+.section-achievements{ border-left:6px solid var(--accent-achievements); }
+.section-training{ border-left:6px solid var(--accent-training); }
+.section-projects{ border-left:6px solid var(--accent-projects); }
+.section-meta{ border-left:6px solid var(--accent-meta); }
+
+/* ---------- Pills / chips ---------- */
+.pill{ display:inline-flex; align-items:center; gap:.4rem; padding:.35rem .7rem; border-radius:999px; font-size:.85rem; color:#2b1b14; background:linear-gradient(135deg,#ffffffb5,#ffffff80); border:1px solid #ffffffcc; }
+.chip{ display:inline-flex; align-items:center; gap:.35rem; padding:.25rem .6rem; border-radius:999px; font-size:.8rem; color:var(--text); background:linear-gradient(135deg,#ffffff0f,#ffffff08); border:1px solid rgba(255,255,255,.08); }
+
+/* ---------- KPI tiles ---------- */
+.kpi{ text-align:center; padding:1rem; border-radius:16px; color:var(--text); background: linear-gradient(160deg, #ffffff10, #00000014); border: 1px solid rgba(255,255,255,0.07); }
+.kpi .value{ font-size:1.6rem; font-weight:900; color:#FFD7C2; }
+.kpi .label{ font-size:.9rem; color: var(--muted); font-weight:600; }
+
+/* ---------- QA rows ---------- */
+.qa{ display:grid; grid-template-columns: 220px 8px 1fr; align-items:center; gap:.4rem; padding:.5rem .6rem; margin:.15rem 0; }
+.qa .qa-label{ font-weight:800; color:#FFCCBC; }
+.qa .qa-sep{ width:100%; height:1px; background:linear-gradient(90deg,transparent,#ffffff33,transparent); }
+.qa .qa-value{ color: var(--text); font-weight:700; }
+.qa.mini{ grid-template-columns: 1fr 1fr; gap:.6rem; }
+.qa.mini .qa-label{ opacity:.9; }
+
+/* ---------- Education cards ---------- */
+.degree{ border:1px solid rgba(255,255,255,.06); border-radius:16px; margin:.5rem 0; overflow:hidden; }
+.degree-head{ background: linear-gradient(90deg, #ffecd2, #fcb69f); color:#3b2b1f; padding:.6rem .8rem; }
+.deg-level{ font-weight:900; }
+.deg-major{ font-weight:700; opacity:.95; }
+.degree-grid{ display:grid; grid-template-columns: repeat(3,1fr); gap:.6rem; padding:.7rem .8rem; }
+.degree-grid .wide{ grid-column: span 3; }
+.deg-label{ display:block; font-size:.8rem; color:#FFC9AE; font-weight:700; }
+.deg-val{ font-weight:800; color:var(--text); }
+
+/* ---------- Experience cards ---------- */
+.role{ border:1px dashed rgba(255,255,255,.12); border-radius:14px; padding:.8rem .9rem; margin:.6rem 0; }
+.role-top{ display:flex; justify-content:space-between; gap:.6rem; align-items:flex-start; }
+.role-left{ max-width:60%; }
+.role-title{ font-weight:900; color:#FFD0B0; font-size:1.05rem; }
+.role-org{ font-weight:900; color:#FFE0CC; font-size:1.1rem; text-align:right; }
+.role-meta{ margin-top:.4rem; display:flex; gap:.4rem; flex-wrap:wrap; }
+
+/* ---------- Publications stats ---------- */
+.stat{ background:linear-gradient(180deg,#ffffff0d,#00000010); border:1px solid rgba(255,255,255,.07); border-radius:12px; padding:.6rem .8rem; margin:.3rem 0; text-align:center; }
+.stat-label{ font-size:.85rem; color:#FFDCC8; font-weight:700; }
+.stat-value{ font-size:1.8rem; font-weight:900; color:#FFFFFF; }
