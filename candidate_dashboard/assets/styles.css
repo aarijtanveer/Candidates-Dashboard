@@ -1,0 +1,98 @@
+/* iOS-inspired pastel gradients and neumorphic cards */
+:root{
+  --bg: #0f1220; /* dark gradient bg default */
+  --text: #E6E8F2;
+  --muted: #A9B1C6;
+  --card: #131730;
+  --shadow-dark: rgba(0,0,0,0.35);
+  --shadow-light: rgba(255,255,255,0.06);
+  --radius: 18px;
+}
+
+/* Light mode overrides via body.light (reserved for future) */
+body.light{
+  --bg: #F7F8FC;
+  --text: #1F2544;
+  --muted: #424B6B;
+  --card: #FFFFFF;
+  --shadow-dark: rgba(0,0,0,0.08);
+  --shadow-light: rgba(255,255,255,0.5);
+}
+
+/* Page background */
+section.main > div {
+  background: radial-gradient(1200px 600px at -10% -10%, #8cc8ff33 0%, transparent 60%),
+              radial-gradient(1000px 500px at 110% -20%, #ffb8e633 0%, transparent 60%),
+              radial-gradient(900px 500px at 50% 120%, #a2facf33 0%, transparent 60%),
+              var(--bg);
+}
+
+/* Neumorphic card */
+.card{
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 1rem 1.2rem;
+  box-shadow: 12px 16px 32px var(--shadow-dark), -6px -6px 18px var(--shadow-light);
+  border: 1px solid rgba(255,255,255,0.04);
+}
+
+/* Gradient headers */
+.gradient-title{
+  font-weight: 800;
+  font-size: 1.4rem;
+  background: linear-gradient(90deg,#70E1F5,#FFD194);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Pill chips */
+.pill{ display:inline-flex; align-items:center; gap:.4rem; padding:.35rem .7rem; border-radius:999px; font-size:.85rem; color:var(--text); background:linear-gradient(135deg,#ffffff0c,#ffffff08); border:1px solid rgba(255,255,255,.08);}
+
+/* Section color accents */
+.section-personal{ border-left:6px solid #7F7FD5; }
+.section-education{ border-left:6px solid #43C6AC; }
+.section-experience{ border-left:6px solid #FA709A; }
+.section-publications{ border-left:6px solid #70E1F5; }
+.section-achievements{ border-left:6px solid #FAD961; }
+
+/* Metric tiles */
+.kpi{
+  text-align:center; padding:1rem; border-radius:16px; color:var(--text);
+  background: linear-gradient(160deg, #ffffff0e, #00000010);
+  border: 1px solid rgba(255,255,255,0.06);
+}
+.kpi .value{ font-size:1.6rem; font-weight:700; }
+.kpi .label{ font-size:.85rem; color: var(--muted); }
+
+/* Sticky header */
+.header{
+  position: sticky; top: 0; z-index: 50; margin-bottom: 1rem;
+  background: linear-gradient(120deg,#5EFCE8 0%,#736EFE 100%);
+  border-radius: 16px; padding: 1rem 1.2rem; color: #0b0f1d; box-shadow: 0 10px 30px rgba(0,0,0,.25);
+}
+.header .title{ font-size:1.2rem; font-weight:800; }
+.header .subtitle{ opacity:.85; font-weight:600; }
+
+/* Segmented selector look */
+.segmented{
+  display:inline-flex; padding:6px; background: rgba(255,255,255,.08); border-radius:999px; gap:6px;
+}
+.segmented .seg{
+  padding:.4rem .9rem; border-radius:999px; background: transparent; color:var(--text); border:1px solid transparent; cursor:pointer; font-weight:600;
+}
+.segmented .seg.active{
+  background: #ffffff18; border-color:#ffffff33;
+}
+
+/* Typography */
+.small{ font-size:.85rem; color: var(--muted); }
+.h1{ font-size:2rem; font-weight:900; }
+.h2{ font-size:1.3rem; font-weight:800; }
+
+/* Tables */
+.styled-table table{ border-collapse:separate; border-spacing:0 8px; }
+.styled-table td, .styled-table th{ padding:.5rem .6rem !important; }
+.styled-table tr{ background:var(--card); }
+.styled-table tr td:first-child, .styled-table tr th:first-child{ border-top-left-radius:10px; border-bottom-left-radius:10px; }
+.styled-table tr td:last-child, .styled-table tr th:last-child{ border-top-right-radius:10px; border-bottom-right-radius:10px; }
